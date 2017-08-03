@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Part 3: Build a CRUD App
 
 ## Summary
@@ -108,3 +109,6 @@ When submitting the form, if the review is unsuccessfully created, the user shou
 Part-3 wraps up the assessment.  If you haven't already done so, commit your
 changes.  Please wait until the end of the assessment period to submit your
 solution.
+=======
+# TweetViz
+>>>>>>> 0278ec324873dc9dc0b7edefb126d47c33548e5e
