@@ -1,6 +1,6 @@
 class Tweet < ActiveRecord::Base
-  belongs_to :term
+  belongs_to :bubble
 
-  validates_presence_of :term_id
-  
+  validates_presence_of :bubble_id
+
 end

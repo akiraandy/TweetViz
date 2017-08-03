@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   include BCrypt
 
-  has_many :terms
+  has_many :bubbles, through: :galleries
+  has_many :galleries
+
   validates_presence_of :username, :hashed_password, :email
 
   def password

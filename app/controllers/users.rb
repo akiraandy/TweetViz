@@ -3,7 +3,6 @@ get '/users/register' do
 end
 
 post '/users' do
-  p params
   @user = User.new(params[:user])
   if @user.save
     session[:user_id] = @user.id
@@ -12,4 +11,10 @@ post '/users' do
     @errors = @user.errors.full_messages
     erb :"/users/new"
   end
+end
+
+get '/users/:id' do
+  authorize!
+  @user = User.find_by(id: params[:id])
+  erb :"/users/profile"
 end

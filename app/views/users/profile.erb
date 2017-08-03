@@ -1,0 +1,17 @@
+<h1>Welcome <%= current_user.username %></h1>
+
+ <h2>Create new Gallery</h2>
+<%= erb :_errors %>
+ <form action="/galleries" method="post">
+   <input type="text" name="title">
+   <input type="submit" value="New Gallery">
+ </form>
+
+<h2>Your galleries: </h2>
+<% if current_user.galleries %>
+  <ul>
+    <% current_user.galleries.each do |gallery| %>
+    <li><a href="/galleries/<%= gallery.id %>"><%= gallery.title %></a></li>
+    <% end %>
+  </ul>
+<% end %>
