@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('#submit-term').on("submit", function() {
     event.preventDefault();
-    console.log("YAY");
+
 
     var $form = $(this);
     var term = $form.serialize();
@@ -13,9 +13,10 @@ $(document).ready(function() {
     });
 
     request.done(function(response){
-      console.log("HELLO");
-      console.log(JSON.parse(response));
-
+      var info = JSON.parse(response);
+      var newBubble = new Bubble(50);
+      bubbles.push(newBubble);
+      console.log("Hello");
     });
 
 
