@@ -1,5 +1,6 @@
 get '/galleries/:id' do
-  
+  @gallery = Gallery.find_by(id: params[:id])
+  erb :"/galleries/show"
 end
 
 post '/galleries' do
