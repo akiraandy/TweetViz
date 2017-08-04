@@ -11,7 +11,7 @@
 <% if current_user.galleries %>
   <ul>
     <% current_user.galleries.each do |gallery| %>
-    <li><a href="/galleries/<%= gallery.id %>"><%= gallery.title %></a></li>
+    <li><a class="gallery-link" href="/galleries/<%= gallery.id %>"><%= gallery.title %></a></li>
     <% end %>
   </ul>
 <% end %>

@@ -1,5 +1,10 @@
 $(document).ready(function() {
-  $('#submit-term').on("submit", function() {
+  createBubble();
+});
+
+var createBubble = function(){
+
+ $('#submit-term').on("submit", function() {
     event.preventDefault();
 
     var $form = $(this);
@@ -12,13 +17,10 @@ $(document).ready(function() {
     });
 
     request.done(function(response){
-      console.log(response);
       var info = JSON.parse(response);
       var newBubble = new Bubble(info.name, info.value);
-      // newBubble.describe();
       bubbles.push(newBubble);
+      $('.data').append("<li>" + info.name + " has a total retweet value of: " + "<em>" + info.value + "</em></li>" );;
     });
-
-
   });
-});
+}

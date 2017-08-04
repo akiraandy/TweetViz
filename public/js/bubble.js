@@ -1,14 +1,20 @@
 function Bubble(term, value) {
   this.term = term;
   this.value = value;
+  this.r = random(255);
+  this.g = random(255);
+  this.b = random(255);
   this.v = createVector(width/2, height/2);
   this.vel = createVector(1.5, 1.5);
   this.diameter = function(){
     return 15 + ((value / largestValue()) * 190);
   };
 
+  this.radius = this.diameter/2;
+
   this.display = function() {
-    fill(255);
+    fill(this.r, this.g, this.b, 127);
+
     ellipse(this.v.x, this.v.y, this.diameter(), this.diameter());
 
     textSize(32);
@@ -30,7 +36,7 @@ function Bubble(term, value) {
 
 var largestValue = function() {
   if (bubbles.length == 0) {
-    return 100;
+    return 1;
   };
   var bubbleVals = bubbles.map(function(bubble){
     return bubble.value;

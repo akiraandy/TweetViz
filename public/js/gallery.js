@@ -1,5 +1,6 @@
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(800, 640);
+  ellipseMode(RADIUS);
   bubbles = [];
 }
 
