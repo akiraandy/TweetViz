@@ -19,7 +19,7 @@ function Bubble(term, value) {
 
     textSize(32);
     textAlign(CENTER);
-    fill(0, 102, 153);
+    fill(255);
     text(this.term, this.v.x, this.v.y);
   }
 
