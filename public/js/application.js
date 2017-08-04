@@ -3,8 +3,7 @@ $(document).ready(function() {
 });
 
 var createBubble = function(){
-
- $('#submit-term').on("submit", function() {
+ $('#submit-term').on("submit", function(event) {
     event.preventDefault();
 
     var $form = $(this);
