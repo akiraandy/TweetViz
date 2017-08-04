@@ -15,7 +15,7 @@ $(document).ready(function() {
       console.log(response);
       var info = JSON.parse(response);
       var newBubble = new Bubble(info.name, info.value);
-      newBubble.describe();
+      // newBubble.describe();
       bubbles.push(newBubble);
     });
 

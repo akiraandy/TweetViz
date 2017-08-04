@@ -1,23 +1,15 @@
 function Bubble(term, value) {
-  this.x = width/2;
-  this.y = height/2;
-  this.xspeed = 1;
-  this.yspeed = 1;
   this.term = term;
   this.value = value;
-
   this.v = createVector(width/2, height/2);
-  this.vel = createVector(2, 2);
-
-  this.diameter = ( value * 100 ) / largestValue();
-
-  this.describe = function(){
-    console.log(this.term + " diameter is: " + this.diameter);
+  this.vel = createVector(1.5, 1.5);
+  this.diameter = function(){
+    return 15 + ((value / largestValue()) * 190);
   };
 
   this.display = function() {
     fill(255);
-    ellipse(this.v.x, this.v.y, this.diameter, this.diameter);
+    ellipse(this.v.x, this.v.y, this.diameter(), this.diameter());
 
     textSize(32);
     textAlign(CENTER);
@@ -43,6 +35,5 @@ var largestValue = function() {
   var bubbleVals = bubbles.map(function(bubble){
     return bubble.value;
   });
-  console.log("Maxval is: " + Math.max.apply(Math, bubbleVals));
    return Math.max.apply(Math, bubbleVals);
 }
